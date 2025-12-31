@@ -3,229 +3,135 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contact Us | Point Investment Company Limited</title>
+    <title>Contact Us | Gold Medal Construction</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Lato:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="style.css">
-    <link rel="icon" type="image/x-icon" href="https://img.icons8.com/color/96/000000/engineering.png">
 </head>
 <body>
-    <!-- Header & Navigation -->
+
+    <!-- Header -->
     <header>
         <div class="container nav-container">
-            <a href="index.html" class="logo">Point<span>Investment</span></a>
-            <button class="mobile-menu-btn">
+            <a href="index.html" class="logo">Gold Medal<span>Construction</span></a>
+            <button class="mobile-menu-btn" id="mobileMenuBtn">
                 <i class="fas fa-bars"></i>
             </button>
-            <nav>
+            <nav id="mainNav">
                 <ul>
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="about.html">About</a></li>
-                    <li><a href="services.html">Services</a></li>
-                    <li><a href="projects.html">Projects</a></li>
-                    <li><a href="contact.html" class="active">Contact</a></li>
+                    <li><a href="index.html" class="nav-link">Home</a></li>
+                    <li><a href="about.html" class="nav-link">About</a></li>
+                    <li class="has-dropdown">
+                        <a href="services.html" class="nav-link">Services <i class="fas fa-chevron-down dropdown-arrow"></i></a>
+                        <ul class="dropdown" id="servicesDropdown">
+                            <li><a href="services.html#residential">Residential</a></li>
+                            <li><a href="services.html#commercial">Commercial</a></li>
+                            <li><a href="services.html#renovation">Renovation</a></li>
+                            <li><a href="services.html#planning">Planning</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="projects.html" class="nav-link">Projects</a></li>
+                    <li><a href="contact.html" class="nav-link active">Contact</a></li>
                 </ul>
             </nav>
         </div>
     </header>
 
-    <!-- Page Header -->
-    <section class="page-header">
-        <img src="https://images.unsplash.com/photo-1513584684374-8bab748fbf90?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2068&q=80" 
-             alt="Contact Background" class="page-header-bg">
-        <div class="page-header-content">
+    <!-- Mobile Overlay -->
+    <div class="mobile-overlay" id="mobileOverlay"></div>
+
+    <!-- Page Hero -->
+    <section class="page-hero contact-bg">
+        <div class="page-hero-content">
             <h1>Contact Us</h1>
-            <p>Get in touch with our team in Juba for engineering, construction, and supply solutions</p>
+            <p>Reach out today and let us help turn your project into reality.</p>
         </div>
     </section>
 
-    <!-- Contact Content -->
-    <section class="page-content">
+    <!-- Contact Section -->
+    <section class="contact-section">
         <div class="container">
-            <div class="section-title reveal">
-                <h2>Get In Touch</h2>
-                <p class="section-subtitle">Reach out to discuss your project requirements or to learn more about our services</p>
-            </div>
-            
-            <div class="contact-container">
-                <div class="contact-info reveal">
-                    <h3 style="color: var(--charcoal); margin-bottom: 1.5rem;">Contact Information</h3>
-                    <p style="margin-bottom: 2rem;">We're here to assist you with your engineering, construction, and supply needs. Reach out through any of the following channels.</p>
-                    
+            <div class="contact-container fade-in">
+                <div class="contact-form">
+                    <h3 style="margin-bottom: 2rem; font-size: 1.8rem;">Start Your Project</h3>
+                    <form id="contactForm">
+                        <div class="form-group">
+                            <label for="name">Full Name</label>
+                            <input type="text" id="name" class="form-control" required placeholder="John Deng">
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email Address</label>
+                            <input type="email" id="email" class="form-control" required placeholder="john@example.com">
+                        </div>
+                        <div class="form-group">
+                            <label for="phone">Phone Number</label>
+                            <input type="tel" id="phone" class="form-control" required placeholder="+211 XXX XXX XXX">
+                        </div>
+                        <div class="form-group">
+                            <label for="service">Service Interested In</label>
+                            <select id="service" class="form-control">
+                                <option value="">Select a service</option>
+                                <option value="residential">Residential Construction</option>
+                                <option value="commercial">Commercial Construction</option>
+                                <option value="renovation">Renovation & Finishing</option>
+                                <option value="planning">Project Planning & Management</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="message">Project Details</label>
+                            <textarea id="message" class="form-control" required placeholder="Tell us about your construction project..."></textarea>
+                        </div>
+                        <button type="submit" class="btn" style="width: 100%; font-size: 1.2rem; padding: 1.3rem;">Submit Request</button>
+                    </form>
+                </div>
+
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-phone"></i>
+                        </div>
+                        <div class="contact-text">
+                            <h3>Call Us Today</h3>
+                            <p style="font-size: 1.4rem; font-weight: 700; color: var(--gold);">+211 923 615 154</p>
+                            <p>Office Hours: Monday - Sunday</p>
+                            <p>Always Open</p>
+                        </div>
+                    </div>
+
                     <div class="contact-item">
                         <div class="contact-icon">
                             <i class="fas fa-map-marker-alt"></i>
                         </div>
-                        <div>
-                            <h4>Our Location</h4>
+                        <div class="contact-text">
+                            <h3>Visit Our Office</h3>
+                            <p style="font-weight: 600;">Gold Medal Construction – GMC</p>
+                            <p>Juba City Mall, 2nd Floor, Room 234</p>
                             <p>Juba, South Sudan</p>
-                            <p style="font-size: 0.9rem; color: #666; margin-top: 0.3rem;">Main office located in central Juba</p>
                         </div>
                     </div>
-                    
+
                     <div class="contact-item">
                         <div class="contact-icon">
-                            <i class="fas fa-phone-alt"></i>
+                            <i class="fab fa-whatsapp"></i>
                         </div>
-                        <div>
-                            <h4>Phone / WhatsApp</h4>
-                            <p>+211 922 059 055</p>
-                            <a href="https://wa.me/211922059055" class="whatsapp-btn" target="_blank">
-                                <i class="fab fa-whatsapp"></i> Chat on WhatsApp
+                        <div class="contact-text">
+                            <h3>WhatsApp Business</h3>
+                            <p>Contact us instantly for inquiries and quotations.</p>
+                            <a href="https://wa.me/211923615154" class="whatsapp-btn" target="_blank">
+                                <i class="fab fa-whatsapp"></i> Message on WhatsApp
                             </a>
                         </div>
                     </div>
-                    
-                    <div class="contact-item">
-                        <div class="contact-icon">
-                            <i class="fas fa-envelope"></i>
-                        </div>
-                        <div>
-                            <h4>Email</h4>
-                            <p>info@pointinvestment.com</p>
-                            <p style="font-size: 0.9rem; color: #666; margin-top: 0.3rem;">For general inquiries and project discussions</p>
+
+                    <div class="map-placeholder">
+                        <div class="map-overlay">
+                            <h3>Our Location in Juba</h3>
+                            <p>Located at City Mall in the heart of Juba</p>
                         </div>
                     </div>
-                    
-                    <div class="contact-item">
-                        <div class="contact-icon">
-                            <i class="fas fa-clock"></i>
-                        </div>
-                        <div>
-                            <h4>Business Hours</h4>
-                            <p>Monday - Friday: 8:00 AM - 6:00 PM</p>
-                            <p>Saturday: 9:00 AM - 2:00 PM</p>
-                            <p style="font-size: 0.9rem; color: #666; margin-top: 0.3rem;">Emergency support available 24/7</p>
-                        </div>
-                    </div>
-                    
-                    <div style="margin-top: 2rem; padding-top: 2rem; border-top: 1px solid rgba(0, 0, 0, 0.1);">
-                        <h4 style="color: var(--charcoal); margin-bottom: 1rem;">Follow Us</h4>
-                        <div class="social-links">
-                            <a href="#"><i class="fab fa-facebook-f"></i></a>
-                            <a href="#"><i class="fab fa-twitter"></i></a>
-                            <a href="#"><i class="fab fa-linkedin-in"></i></a>
-                            <a href="#"><i class="fab fa-instagram"></i></a>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="contact-form reveal">
-                    <h3 style="color: var(--charcoal); margin-bottom: 1.5rem;">Send Us a Message</h3>
-                    <form id="contactForm">
-                        <div class="form-row">
-                            <div>
-                                <label for="name">Full Name *</label>
-                                <input type="text" id="name" placeholder="Your Name" required>
-                            </div>
-                            <div>
-                                <label for="phone">Phone Number *</label>
-                                <input type="tel" id="phone" placeholder="Phone Number" required>
-                            </div>
-                        </div>
-                        
-                        <div class="form-row">
-                            <div>
-                                <label for="email">Email Address *</label>
-                                <input type="email" id="email" placeholder="Email Address" required>
-                            </div>
-                            <div>
-                                <label for="subject">Subject *</label>
-                                <select id="subject" required>
-                                    <option value="" disabled selected>Select a subject</option>
-                                    <option value="engineering">Engineering Services</option>
-                                    <option value="construction">Construction Support</option>
-                                    <option value="supply">Supply Services</option>
-                                    <option value="project">Project Management</option>
-                                    <option value="general">General Inquiry</option>
-                                    <option value="quote">Request for Quote</option>
-                                </select>
-                            </div>
-                        </div>
-                        
-                        <div>
-                            <label for="message">Your Message *</label>
-                            <textarea id="message" rows="6" placeholder="Please describe your project or inquiry in detail..." required></textarea>
-                        </div>
-                        
-                        <div>
-                            <label for="attachment">Attachment (Optional)</label>
-                            <input type="file" id="attachment" style="padding: 0.5rem; border: 1px solid #ddd; border-radius: 4px; width: 100%;">
-                            <small style="display: block; margin-top: 0.5rem; color: #666;">You can attach project plans, specifications, or reference documents (Max: 10MB)</small>
-                        </div>
-                        
-                        <button type="submit" class="btn" style="width: 100%; margin-top: 1.5rem;">Send Message</button>
-                    </form>
-                </div>
-            </div>
-            
-            <!-- Map Section -->
-            <div class="map-section reveal">
-                <div class="map-container">
-                    <!-- Map placeholder with enhanced styling -->
-                    <div class="map-overlay">
-                        <div class="map-content">
-                            <h3 style="color: var(--charcoal); margin-bottom: 1rem;">Our Location in Juba</h3>
-                            <p style="margin-bottom: 1.5rem;">Point Investment Company Limited is strategically located in Juba to serve clients across South Sudan.</p>
-                            <div style="font-size: 3rem; color: var(--gold); margin-bottom: 1rem;">
-                                <i class="fas fa-map-marked-alt"></i>
-                            </div>
-                            <p><strong>Office Address:</strong><br>Central Business District<br>Juba, South Sudan</p>
-                            <a href="https://maps.google.com/?q=Juba,South+Sudan" target="_blank" class="btn" style="margin-top: 1rem;">
-                                <i class="fas fa-directions"></i> Get Directions
-                            </a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            
-            <!-- FAQ Section -->
-            <div class="section-title reveal" style="margin-top: 5rem;">
-                <h2>Frequently Asked Questions</h2>
-                <p class="section-subtitle">Quick answers to common questions about our services</p>
-            </div>
-            
-            <div class="faq-container" style="max-width: 800px; margin: 0 auto;">
-                <div class="faq-item reveal">
-                    <div class="faq-question">
-                        <h4>What areas in South Sudan do you serve?</h4>
-                        <span class="faq-toggle">+</span>
-                    </div>
-                    <div class="faq-answer">
-                        <p>We are based in Juba and serve clients throughout South Sudan, including Central Equatoria, Upper Nile, Jonglei, Unity, and other states. We have completed projects in various regions across the country.</p>
-                    </div>
-                </div>
-                
-                <div class="faq-item reveal">
-                    <div class="faq-question">
-                        <h4>How quickly can you start a new project?</h4>
-                        <span class="faq-toggle">+</span>
-                    </div>
-                    <div class="faq-answer">
-                        <p>After initial consultation and project planning, we can typically mobilize within 2-4 weeks, depending on project scale and complexity. We maintain a ready team and equipment for timely project commencement.</p>
-                    </div>
-                </div>
-                
-                <div class="faq-item reveal">
-                    <div class="faq-question">
-                        <h4>Do you provide both design and construction services?</h4>
-                        <span class="faq-toggle">+</span>
-                    </div>
-                    <div class="faq-answer">
-                        <p>Yes, we offer comprehensive services including engineering design, construction, and project management. We can handle projects from concept to completion or provide specific services based on your needs.</p>
-                    </div>
-                </div>
-                
-                <div class="faq-item reveal">
-                    <div class="faq-question">
-                        <h4>What types of construction materials do you supply?</h4>
-                        <span class="faq-toggle">+</span>
-                    </div>
-                    <div class="faq-answer">
-                        <p>We supply a wide range of construction materials including cement, steel, aggregates, roofing materials, plumbing and electrical supplies, finishing materials, and specialized equipment for construction projects.</p>
-                    </div>
+
                 </div>
             </div>
         </div>
@@ -235,383 +141,45 @@
     <footer>
         <div class="container">
             <div class="footer-content">
-                <div>
-                    <a href="index.html" class="footer-logo">Point<span>Investment</span></a>
-                    <p>Point Investment Company Limited is a premier provider of engineering, construction support, and supply services in Juba, South Sudan.</p>
-                    <div class="social-links">
+                <div class="footer-about">
+                    <div class="footer-logo">Gold Medal<span>Construction</span></div>
+                    <p>Gold Medal Construction (GMC) provides professional construction and engineering services across South Sudan — delivering quality work with reliability and care.</p>
+                    <div class="social-icons">
                         <a href="#"><i class="fab fa-facebook-f"></i></a>
-                        <a href="#"><i class="fab fa-twitter"></i></a>
-                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
-                        <a href="#"><i class="fab fa-instagram"></i></a>
                     </div>
                 </div>
+
                 <div class="footer-links">
-                    <h4>Quick Links</h4>
+                    <h3 class="footer-heading">Our Services</h3>
                     <ul>
-                        <li><a href="index.html">Home</a></li>
-                        <li><a href="about.html">About Us</a></li>
-                        <li><a href="services.html">Our Services</a></li>
-                        <li><a href="projects.html">Projects</a></li>
-                        <li><a href="contact.html">Contact</a></li>
+                        <li><a href="services.html#residential"><i class="fas fa-chevron-right"></i> Residential Construction</a></li>
+                        <li><a href="services.html#commercial"><i class="fas fa-chevron-right"></i> Commercial Construction</a></li>
+                        <li><a href="services.html#renovation"><i class="fas fa-chevron-right"></i> Renovation Works</a></li>
+                        <li><a href="services.html#planning"><i class="fas fa-chevron-right"></i> Project Management</a></li>
                     </ul>
                 </div>
-                <div class="footer-contact">
-                    <h4>Contact Info</h4>
-                    <p><i class="fas fa-map-marker-alt"></i> Juba, South Sudan</p>
-                    <p><i class="fas fa-phone-alt"></i> +211 922 059 055</p>
-                    <p><i class="fas fa-envelope"></i> info@pointinvestment.com</p>
-                    <p><i class="fas fa-clock"></i> Mon-Fri: 8:00 AM - 6:00 PM</p>
+
+                <div class="footer-links">
+                    <h3 class="footer-heading">Contact Info</h3>
+                    <ul>
+                        <li><a><i class="fas fa-phone"></i> +211 923 615 154</a></li>
+                        <li><a><i class="fas fa-envelope"></i> goldmedalconstruction73@gmail.com</a></li>
+                        <li><a><i class="fas fa-map-marker-alt"></i> City Mall, Juba, South Sudan</a></li>
+                    </ul>
                 </div>
             </div>
-            <div class="footer-bottom">
-                <p>&copy; <span id="currentYear"></span> Point Investment Company Limited. All rights reserved.</p>
+
+            <div class="copyright">
+                <p>© 2025 Gold Medal Construction – Juba, South Sudan</p>
             </div>
         </div>
     </footer>
 
-    <!-- Scroll to Top Button -->
-    <button class="scroll-top">
+    <!-- Back to Top Button -->
+    <a href="#" class="back-to-top" id="backToTop">
         <i class="fas fa-chevron-up"></i>
-    </button>
+    </a>
 
     <script src="script.js"></script>
-    <script>
-        // FAQ Functionality
-        document.addEventListener('DOMContentLoaded', function() {
-            const faqItems = document.querySelectorAll('.faq-item');
-            
-            faqItems.forEach(item => {
-                const question = item.querySelector('.faq-question');
-                const answer = item.querySelector('.faq-answer');
-                const toggle = item.querySelector('.faq-toggle');
-                
-                question.addEventListener('click', () => {
-                    // Close all other FAQ items
-                    faqItems.forEach(otherItem => {
-                        if (otherItem !== item) {
-                            otherItem.querySelector('.faq-answer').style.maxHeight = null;
-                            otherItem.querySelector('.faq-toggle').textContent = '+';
-                        }
-                    });
-                    
-                    // Toggle current item
-                    if (answer.style.maxHeight) {
-                        answer.style.maxHeight = null;
-                        toggle.textContent = '+';
-                    } else {
-                        answer.style.maxHeight = answer.scrollHeight + 'px';
-                        toggle.textContent = '−';
-                    }
-                });
-            });
-            
-            // Initialize FAQ answers to be closed
-            document.querySelectorAll('.faq-answer').forEach(answer => {
-                answer.style.maxHeight = null;
-            });
-        });
-        
-        // Enhanced contact form validation
-        const contactForm = document.getElementById('contactForm');
-        if (contactForm) {
-            contactForm.addEventListener('submit', function(e) {
-                e.preventDefault();
-                
-                // Get form values
-                const name = document.getElementById('name').value.trim();
-                const phone = document.getElementById('phone').value.trim();
-                const email = document.getElementById('email').value.trim();
-                const subject = document.getElementById('subject').value;
-                const message = document.getElementById('message').value.trim();
-                
-                // Validate form
-                let isValid = true;
-                let errorMessage = '';
-                
-                if (!name) {
-                    isValid = false;
-                    errorMessage += 'Please enter your name.\n';
-                }
-                
-                if (!phone) {
-                    isValid = false;
-                    errorMessage += 'Please enter your phone number.\n';
-                } else if (!/^[0-9+\-\s]+$/.test(phone)) {
-                    isValid = false;
-                    errorMessage += 'Please enter a valid phone number.\n';
-                }
-                
-                if (!email) {
-                    isValid = false;
-                    errorMessage += 'Please enter your email address.\n';
-                } else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
-                    isValid = false;
-                    errorMessage += 'Please enter a valid email address.\n';
-                }
-                
-                if (!subject) {
-                    isValid = false;
-                    errorMessage += 'Please select a subject.\n';
-                }
-                
-                if (!message) {
-                    isValid = false;
-                    errorMessage += 'Please enter your message.\n';
-                }
-                
-                if (!isValid) {
-                    alert(errorMessage);
-                    return;
-                }
-                
-                // Show success message
-                alert(`Thank you ${name}! Your message has been sent successfully. We will contact you at ${phone} or ${email} within 24 hours.`);
-                
-                // Reset form
-                this.reset();
-            });
-        }
-    </script>
-    
-    <style>
-        /* FAQ Styles */
-        .faq-item {
-            border: 1px solid #e0e0e0;
-            border-radius: 8px;
-            margin-bottom: 1rem;
-            overflow: hidden;
-            transition: var(--transition);
-        }
-        
-        .faq-item:hover {
-            border-color: var(--gold);
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
-        }
-        
-        .faq-question {
-            padding: 1.5rem;
-            cursor: pointer;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            background-color: var(--light-gray);
-        }
-        
-        .faq-question h4 {
-            margin: 0;
-            font-size: 1.1rem;
-            color: var(--charcoal);
-        }
-        
-        .faq-toggle {
-            font-size: 1.5rem;
-            font-weight: 300;
-            color: var(--gold);
-            transition: var(--transition);
-        }
-        
-        .faq-answer {
-            padding: 0 1.5rem;
-            max-height: 0;
-            overflow: hidden;
-            transition: max-height 0.3s ease;
-        }
-        
-        .faq-answer p {
-            padding: 1.5rem 0;
-            margin: 0;
-            border-top: 1px solid #e0e0e0;
-        }
-        
-        /* Form label styling */
-        .contact-form label {
-            display: block;
-            margin-bottom: 0.5rem;
-            font-weight: 600;
-            color: var(--charcoal);
-        }
-        
-        .contact-form select {
-            width: 100%;
-            padding: 1rem;
-            margin-bottom: 1.5rem;
-            border: 1px solid #ddd;
-            border-radius: 4px;
-            font-family: 'Lato', sans-serif;
-            background-color: white;
-            color: var(--charcoal);
-        }
-        
-        .contact-form small {
-            display: block;
-            margin-top: 0.3rem;
-            color: #666;
-            font-size: 0.85rem;
-        }
-        
-        /* Filter buttons for projects page */
-        .project-filters {
-            margin-bottom: 3rem;
-            text-align: center;
-        }
-        
-        .filter-buttons {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 0.5rem;
-        }
-        
-        .filter-btn {
-            padding: 0.6rem 1.5rem;
-            background: var(--beige);
-            border: none;
-            border-radius: 30px;
-            color: var(--charcoal);
-            font-weight: 500;
-            cursor: pointer;
-            transition: var(--transition);
-        }
-        
-        .filter-btn:hover,
-        .filter-btn.active {
-            background: var(--gold);
-            color: var(--charcoal);
-        }
-        
-        /* Text center utility */
-        .text-center {
-            text-align: center;
-        }
-        
-        /* Project Modal Styles */
-        .project-modal {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            z-index: 2000;
-            display: none;
-            align-items: center;
-            justify-content: center;
-            padding: 20px;
-        }
-        
-        .project-modal.active {
-            display: flex;
-        }
-        
-        .modal-overlay {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(0, 0, 0, 0.8);
-            backdrop-filter: blur(5px);
-        }
-        
-        .modal-content {
-            position: relative;
-            background: white;
-            border-radius: 8px;
-            max-width: 900px;
-            width: 100%;
-            max-height: 90vh;
-            overflow-y: auto;
-            z-index: 2001;
-            animation: modalFadeIn 0.3s ease;
-        }
-        
-        @keyframes modalFadeIn {
-            from {
-                opacity: 0;
-                transform: translateY(-20px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-        
-        .modal-close {
-            position: absolute;
-            top: 20px;
-            right: 20px;
-            background: var(--gold);
-            color: var(--charcoal);
-            border: none;
-            width: 40px;
-            height: 40px;
-            border-radius: 50%;
-            cursor: pointer;
-            z-index: 2002;
-            font-size: 1.2rem;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            transition: var(--transition);
-        }
-        
-        .modal-close:hover {
-            background: var(--charcoal);
-            color: var(--gold);
-            transform: rotate(90deg);
-        }
-        
-        .modal-image {
-            height: 300px;
-            background-size: cover;
-            background-position: center;
-            border-radius: 8px 8px 0 0;
-        }
-        
-        .modal-info {
-            padding: 2rem;
-        }
-        
-        .modal-title {
-            font-size: 2rem;
-            margin-bottom: 0.5rem;
-        }
-        
-        .modal-location {
-            color: var(--gold);
-            font-weight: 600;
-            margin-bottom: 1.5rem;
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-        }
-        
-        .modal-description {
-            font-size: 1.1rem;
-            line-height: 1.6;
-            margin-bottom: 2rem;
-        }
-        
-        .modal-details {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 1.5rem;
-            background: var(--beige);
-            padding: 1.5rem;
-            border-radius: 8px;
-        }
-        
-        .detail-item h4 {
-            color: var(--charcoal);
-            margin-bottom: 0.5rem;
-            font-size: 0.9rem;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-        }
-        
-        .detail-item p {
-            color: var(--charcoal);
-            font-weight: 600;
-        }
-    </style>
 </body>
 </html>
