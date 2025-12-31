@@ -3,242 +3,255 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Our Services | Promise Building Company Limited</title>
-
+    <title>Our Services | Gold Medal Construction - GMC</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Lato:wght@300;400;500;600&display=swap" rel="stylesheet">
-
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-
     <link rel="stylesheet" href="style.css">
-
-    <link rel="icon" type="image/x-icon" href="https://img.icons8.com/color/96/000000/construction.png">
 </head>
-
 <body>
-
+    
     <!-- Header -->
     <header>
         <div class="container nav-container">
-            <a href="index.html" class="logo">Promise<span>Building Co.</span></a>
-
-            <button class="mobile-menu-btn">
+            <a href="index.html" class="logo">Gold Medal<span>Construction</span></a>
+            <button class="mobile-menu-btn" id="mobileMenuBtn">
                 <i class="fas fa-bars"></i>
             </button>
-
-            <nav>
+            <nav id="mainNav">
                 <ul>
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="about.html">About</a></li>
-                    <li><a href="services.html" class="active">Services</a></li>
-                    <li><a href="projects.html">Projects</a></li>
-                    <li><a href="contact.html">Contact</a></li>
+                    <li><a href="index.html" class="nav-link">Home</a></li>
+                    <li><a href="about.html" class="nav-link">About</a></li>
+                    <li class="has-dropdown">
+                        <a href="services.html" class="nav-link active">Services <i class="fas fa-chevron-down dropdown-arrow"></i></a>
+                        <ul class="dropdown" id="servicesDropdown">
+                            <li><a href="#residential">Residential</a></li>
+                            <li><a href="#commercial">Commercial</a></li>
+                            <li><a href="#renovation">Renovation</a></li>
+                            <li><a href="#planning">Planning</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="projects.html" class="nav-link">Projects</a></li>
+                    <li><a href="contact.html" class="nav-link">Contact</a></li>
                 </ul>
             </nav>
         </div>
     </header>
 
+    <!-- Mobile Overlay -->
+    <div class="mobile-overlay" id="mobileOverlay"></div>
 
-    <!-- Page Header -->
-    <section class="page-header">
-        <img src="https://images.unsplash.com/photo-1581093458791-9d42a4b1d1cd?auto=format&fit=crop&w=2000&q=80"
-             class="page-header-bg">
-
-        <div class="page-header-content">
-            <h1>Our Services</h1>
-            <p>Professional construction, materials supply & real estate solutions</p>
+    <!-- Page Hero -->
+    <section class="page-hero services-bg">
+        <div class="page-hero-content">
+            <h1>Our Construction Services</h1>
+            <p>Quality construction — designed, engineered, and delivered with excellence and precision.</p>
         </div>
     </section>
 
-
-    <!-- Services -->
-    <section class="page-content">
+    <!-- Services Section -->
+    <section class="services-section">
         <div class="container">
+            <h2 class="section-title fade-in">What We Do</h2>
+            <div class="services-container">
 
-            <div class="section-title">
-                <h2>What We Do</h2>
-                <p class="section-subtitle">Delivering trusted building and real-estate services</p>
+                <!-- Residential -->
+                <div class="service-item fade-in" id="residential">
+                    <div class="service-header" data-service="residential">
+                        <h3><i class="fas fa-home service-icon"></i> Residential Construction</h3>
+                        <i class="fas fa-chevron-down service-arrow"></i>
+                    </div>
+                    <div class="service-content">
+                        <div class="service-details">
+
+                            <div class="service-subitem">
+                                <h4>House Design & Construction</h4>
+                                <p>We design and build strong, modern and durable homes — from foundation to finishing.</p>
+                            </div>
+
+                            <div class="service-subitem">
+                                <h4>Family Homes & Villas</h4>
+                                <p>Beautiful, secure, and comfortable homes designed around your lifestyle and budget.</p>
+                            </div>
+
+                            <div class="service-subitem">
+                                <h4>Residential Compounds</h4>
+                                <p>High–quality gated compounds with full infrastructure and security designs.</p>
+                            </div>
+
+                            <div class="service-subitem">
+                                <h4>Planning & Drawings</h4>
+                                <p>Architectural design, structural drawings, 3D visualizations and BOQs.</p>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Commercial -->
+                <div class="service-item fade-in" id="commercial">
+                    <div class="service-header" data-service="commercial">
+                        <h3><i class="fas fa-building service-icon"></i> Commercial Construction</h3>
+                        <i class="fas fa-chevron-down service-arrow"></i>
+                    </div>
+                    <div class="service-content">
+                        <div class="service-details">
+
+                            <div class="service-subitem">
+                                <h4>Office & Business Buildings</h4>
+                                <p>Design and construction of modern business facilities tailored for growth and productivity.</p>
+                            </div>
+
+                            <div class="service-subitem">
+                                <h4>Petrol Stations</h4>
+                                <p>Complete turnkey construction of fuel stations including forecourts, shops and structural works.</p>
+                            </div>
+
+                            <div class="service-subitem">
+                                <h4>Shops & Retail Spaces</h4>
+                                <p>Functional and attractive commercial units optimized for business operations.</p>
+                            </div>
+
+                            <div class="service-subitem">
+                                <h4>Warehouses</h4>
+                                <p>Industrial storage solutions with reliable structural engineering and efficient layouts.</p>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Renovation -->
+                <div class="service-item fade-in" id="renovation">
+                    <div class="service-header" data-service="renovation">
+                        <h3><i class="fas fa-paint-roller service-icon"></i> Renovation & Finishing</h3>
+                        <i class="fas fa-chevron-down service-arrow"></i>
+                    </div>
+                    <div class="service-content">
+                        <div class="service-details">
+
+                            <div class="service-subitem">
+                                <h4>Building Renovation</h4>
+                                <p>Upgrading old buildings into modern, safe and beautiful spaces.</p>
+                            </div>
+
+                            <div class="service-subitem">
+                                <h4>Tiling, Painting & Plastering</h4>
+                                <p>Professional finishing services with quality workmanship guaranteed.</p>
+                            </div>
+
+                            <div class="service-subitem">
+                                <h4>Interior & Exterior Refurbishment</h4>
+                                <p>From minor repairs to full interior transformations.</p>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Planning -->
+                <div class="service-item fade-in" id="planning">
+                    <div class="service-header" data-service="planning">
+                        <h3><i class="fas fa-clipboard-list service-icon"></i> Project Planning & Management</h3>
+                        <i class="fas fa-chevron-down service-arrow"></i>
+                    </div>
+                    <div class="service-content">
+                        <div class="service-details">
+
+                            <div class="service-subitem">
+                                <h4>Architectural & Structural Design</h4>
+                                <p>Professional engineering planning to meet safety and regulatory standards.</p>
+                            </div>
+
+                            <div class="service-subitem">
+                                <h4>Project Supervision</h4>
+                                <p>We oversee every stage to ensure quality and timely completion.</p>
+                            </div>
+
+                            <div class="service-subitem">
+                                <h4>Cost Estimation & BOQs</h4>
+                                <p>Transparent pricing and accurate budgeting for every project.</p>
+                            </div>
+
+                            <div class="service-subitem">
+                                <h4>Consultancy</h4>
+                                <p>Expert guidance from concept to completion.</p>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+
             </div>
-
-            <div class="services-grid">
-
-                <div class="service-card">
-                    <div class="service-icon">
-                        <i class="fas fa-building"></i>
-                    </div>
-                    <div class="service-content">
-                        <h3>Construction & Fencing</h3>
-                        <p>We construct durable residential and commercial buildings, boundary fences, and civil structures with high professional standards.</p>
-                        <ul class="service-features">
-                            <li>Residential & commercial building</li>
-                            <li>Perimeter & security fencing</li>
-                            <li>Finishing & renovation works</li>
-                            <li>Project supervision</li>
-                        </ul>
-                    </div>
-                </div>
-
-                <div class="service-card">
-                    <div class="service-icon">
-                        <i class="fas fa-cubes"></i>
-                    </div>
-                    <div class="service-content">
-                        <h3>Block Production & Sales</h3>
-                        <p>Quality concrete blocks suitable for structural work, foundations, and walling.</p>
-                        <ul class="service-features">
-                            <li>Standard concrete blocks</li>
-                            <li>Custom sizes available</li>
-                            <li>Bulk & wholesale supply</li>
-                        </ul>
-                    </div>
-                </div>
-
-                <div class="service-card">
-                    <div class="service-icon">
-                        <i class="fas fa-truck-loading"></i>
-                    </div>
-                    <div class="service-content">
-                        <h3>Aggregate Supply</h3>
-                        <p>We supply all key construction materials including sand, stone, and hardcore.</p>
-                        <ul class="service-features">
-                            <li>Sand & river sand</li>
-                            <li>Crushed stone & hardcore</li>
-                            <li>Murram & gravel</li>
-                            <li>Reliable delivery</li>
-                        </ul>
-                    </div>
-                </div>
-
-                <div class="service-card">
-                    <div class="service-icon">
-                        <i class="fas fa-home"></i>
-                    </div>
-                    <div class="service-content">
-                        <h3>Land & House Sales</h3>
-                        <p>We sell genuine plots, houses, and investment properties.</p>
-                        <ul class="service-features">
-                            <li>Verified land properties</li>
-                            <li>Completed houses</li>
-                            <li>Affordable options</li>
-                            <li>Title processing support</li>
-                        </ul>
-                    </div>
-                </div>
-
-                <div class="service-card">
-                    <div class="service-icon">
-                        <i class="fas fa-key"></i>
-                    </div>
-                    <div class="service-content">
-                        <h3>Property Rental</h3>
-                        <p>We manage and rent residential and commercial units with trusted tenancy services.</p>
-                        <ul class="service-features">
-                            <li>House & apartment rentals</li>
-                            <li>Shops & office spaces</li>
-                            <li>Property management</li>
-                        </ul>
-                    </div>
-                </div>
-
-                <div class="service-card">
-                    <div class="service-icon">
-                        <i class="fas fa-drafting-compass"></i>
-                    </div>
-                    <div class="service-content">
-                        <h3>Architectural Design</h3>
-                        <p>Professional design and planning services for modern houses and flats.</p>
-                        <ul class="service-features">
-                            <li>Architectural drawings</li>
-                            <li>3D concept design</li>
-                            <li>Building plans & approvals</li>
-                        </ul>
-                    </div>
-                </div>
-
-            </div>
-
-
-            <!-- Process -->
-            <div class="section-title" style="margin-top: 4rem;">
-                <h2>Our Work Process</h2>
-                <p class="section-subtitle">Simple and transparent from start to finish</p>
-            </div>
-
-            <div class="process-steps">
-                <div class="process-step">
-                    <div class="step-number">1</div>
-                    <h4>Consultation</h4>
-                    <p>We discuss your needs</p>
-                </div>
-                <div class="process-step">
-                    <div class="step-number">2</div>
-                    <h4>Planning</h4>
-                    <p>We prepare budget & design</p>
-                </div>
-                <div class="process-step">
-                    <div class="step-number">3</div>
-                    <h4>Construction</h4>
-                    <p>Our team executes professionally</p>
-                </div>
-                <div class="process-step">
-                    <div class="step-number">4</div>
-                    <h4>Delivery</h4>
-                    <p>Your project completed successfully</p>
-                </div>
-            </div>
-
-
-            <!-- CTA -->
-            <div class="section-title" style="margin-top: 4rem;">
-                <h2>Ready to Work With Us?</h2>
-                <p class="section-subtitle">Contact us today to get started</p>
-                <a href="contact.html" class="btn btn-large">Get in Touch</a>
-            </div>
-
         </div>
     </section>
 
+    <!-- CTA -->
+    <section class="page-hero" style="height: 50vh; margin-top: 0; background: linear-gradient(rgba(44, 44, 44, 0.8), rgba(44, 44, 44, 0.6)), url('https://images.unsplash.com/photo-1503387769-00a112127ca0?auto=format&fit=crop&w=1950&q=80');">
+        <div class="page-hero-content">
+            <h2 style="font-size: 3rem;">Let’s Build Your Dream Project</h2>
+            <p style="font-size: 1.3rem; margin-bottom: 2.5rem;">Reliable. Professional. Affordable.</p>
+            <a href="contact.html" class="btn">Get a Free Quote</a>
+        </div>
+    </section>
 
     <!-- Footer -->
     <footer>
         <div class="container">
             <div class="footer-content">
-
-                <div>
-                    <a href="index.html" class="footer-logo">Promise<span>Building Co.</span></a>
-                    <p>We are a trusted construction and real-estate company delivering quality buildings, materials, and property solutions.</p>
+                <div class="footer-about">
+                    <div class="footer-logo">Gold Medal<span>Construction</span></div>
+                    <p>Delivering trusted construction services across South Sudan with excellence, precision and professionalism.</p>
+                    <div class="social-icons">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                    </div>
                 </div>
 
                 <div class="footer-links">
-                    <h4>Quick Links</h4>
+                    <h3 class="footer-heading">Quick Links</h3>
                     <ul>
-                        <li><a href="index.html">Home</a></li>
-                        <li><a href="about.html">About</a></li>
-                        <li><a href="services.html">Services</a></li>
-                        <li><a href="projects.html">Projects</a></li>
-                        <li><a href="contact.html">Contact</a></li>
+                        <li><a href="index.html"><i class="fas fa-chevron-right"></i> Home</a></li>
+                        <li><a href="about.html"><i class="fas fa-chevron-right"></i> About Us</a></li>
+                        <li><a href="services.html"><i class="fas fa-chevron-right"></i> Our Services</a></li>
+                        <li><a href="projects.html"><i class="fas fa-chevron-right"></i> Projects</a></li>
+                        <li><a href="contact.html"><i class="fas fa-chevron-right"></i> Contact</a></li>
                     </ul>
                 </div>
 
-                <div class="footer-contact">
-                    <h4>Contact Info</h4>
-                    <p><i class="fas fa-map-marker-alt"></i> Juba, South Sudan</p>
-                    <p><i class="fas fa-phone-alt"></i> +211 985 119 991</p>
-                    <p><i class="fas fa-envelope"></i> info@promisebuilding.com</p>
+                <div class="footer-links">
+                    <h3 class="footer-heading">Our Services</h3>
+                    <ul>
+                        <li><a href="#residential"><i class="fas fa-chevron-right"></i> Residential Construction</a></li>
+                        <li><a href="#commercial"><i class="fas fa-chevron-right"></i> Commercial Buildings</a></li>
+                        <li><a href="#renovation"><i class="fas fa-chevron-right"></i> Renovation & Finishing</a></li>
+                        <li><a href="#planning"><i class="fas fa-chevron-right"></i> Project Management</a></li>
+                    </ul>
                 </div>
 
+                <div class="footer-links">
+                    <h3 class="footer-heading">Contact Info</h3>
+                    <ul>
+                        <li><a href="tel:+211923615154"><i class="fas fa-phone"></i> +211 923 615 154</a></li>
+                        <li><a href="mailto:info@goldmedalconstruction.com"><i class="fas fa-envelope"></i> info@goldmedalconstruction.com</a></li>
+                        <li><a href="#"><i class="fas fa-map-marker-alt"></i> City Mall, 2nd Floor, Room 234 — Juba, South Sudan</a></li>
+                        <li><a href="https://wa.me/211923615154" target="_blank"><i class="fab fa-whatsapp"></i> WhatsApp: +211 923 615 154</a></li>
+                    </ul>
+                </div>
             </div>
 
-            <div class="footer-bottom">
-                <p>&copy; <span id="currentYear"></span> Promise Building Company Limited. All rights reserved.</p>
+            <div class="copyright">
+                <p>© 2025 Gold Medal Construction (GMC). All rights reserved. | Juba, South Sudan</p>
             </div>
         </div>
     </footer>
 
-    <button class="scroll-top">
+    <!-- Back to Top Button -->
+    <a href="#" class="back-to-top" id="backToTop">
         <i class="fas fa-chevron-up"></i>
-    </button>
+    </a>
 
     <script src="script.js"></script>
 </body>
