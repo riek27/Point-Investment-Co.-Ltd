@@ -3,137 +3,93 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>About Us | Promise Building Company Limited</title>
+    <title>About Us | Gold Medal Construction - GMC</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Lato:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="style.css">
-    <link rel="icon" type="image/x-icon" href="https://img.icons8.com/color/96/000000/engineering.png">
 </head>
 <body>
-    <!-- Header & Navigation -->
+
+    <!-- Header -->
     <header>
         <div class="container nav-container">
-            <a href="index.html" class="logo">Promise<span>Building</span></a>
-            <button class="mobile-menu-btn">
+            <a href="index.html" class="logo">Gold Medal<span>Construction</span></a>
+            <button class="mobile-menu-btn" id="mobileMenuBtn">
                 <i class="fas fa-bars"></i>
             </button>
-            <nav>
+            <nav id="mainNav">
                 <ul>
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="about.html" class="active">About</a></li>
-                    <li><a href="services.html">Services</a></li>
-                    <li><a href="projects.html">Projects</a></li>
-                    <li><a href="contact.html">Contact</a></li>
+                    <li><a href="index.html" class="nav-link">Home</a></li>
+                    <li><a href="about.html" class="nav-link active">About</a></li>
+                    <li class="has-dropdown">
+                        <a href="services.html" class="nav-link">Services <i class="fas fa-chevron-down dropdown-arrow"></i></a>
+                        <ul class="dropdown" id="servicesDropdown">
+                            <li><a href="services.html#residential">Residential</a></li>
+                            <li><a href="services.html#commercial">Commercial</a></li>
+                            <li><a href="services.html#renovation">Renovation</a></li>
+                            <li><a href="services.html#planning">Project Management</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="projects.html" class="nav-link">Projects</a></li>
+                    <li><a href="contact.html" class="nav-link">Contact</a></li>
                 </ul>
             </nav>
         </div>
     </header>
 
-    <!-- Page Header -->
-    <section class="page-header">
-        <img src="https://images.unsplash.com/photo-1503387769-00f9c6d2f7c9?auto=format&fit=crop&w=2070&q=80" 
-             alt="About Us Background" class="page-header-bg">
-        <div class="page-header-content">
-            <h1>About Our Company</h1>
-            <p>Reliable construction, real estate and building material supply you can trust</p>
+    <!-- Mobile Overlay -->
+    <div class="mobile-overlay" id="mobileOverlay"></div>
+
+    <!-- Page Hero -->
+    <section class="page-hero about-bg">
+        <div class="page-hero-content">
+            <h1>About Gold Medal Construction</h1>
+            <p>Designing and building quality residential and commercial projects across South Sudan with excellence and precision.</p>
         </div>
     </section>
 
-    <!-- About Content -->
-    <section class="page-content">
+    <!-- About Section -->
+    <section class="about-section">
         <div class="container">
-            <div class="about-content">
+            <div class="about-content fade-in">
+                <div class="about-image">
+                    <img src="https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?auto=format&fit=crop&w=1470&q=80" alt="Gold Medal Construction Team">
+                </div>
                 <div class="about-text">
-                    <h3 class="reveal">Building With Integrity & Quality</h3>
-                    <p class="reveal">Promise Building Company Limited is a trusted construction and real estate company providing professional building, fencing, property rental, and building material supply services. We are committed to delivering high-quality, durable and affordable construction solutions for individuals, companies and communities.</p>
+                    <h2>Turning Dreams Into Reality</h2>
+                    <p>Gold Medal Construction (GMC) is a trusted construction and real estate company based in Juba, South Sudan. With over 10 years of experience in the industry, we specialize in designing and constructing residential homes, commercial buildings, petrol stations, and modern developments built to last.</p>
+                    <p>Our goal is simple — to transform your vision into strong, beautiful, and functional developments. From planning and design to construction and finishing, we combine engineering expertise, skilled workmanship, and a strong commitment to quality.</p>
+                    <p>We take pride in delivering reliable, affordable, and professional construction solutions that meet both local and international standards. Every project is handled with integrity, precision, and respect for our clients’ expectations.</p>
+                    
+                    <div class="about-stats">
+                        <div class="stat-item">
+                            <div class="stat-number" data-count="10">10+</div>
+                            <div class="stat-label">Years Experience</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-number" data-count="80">80+</div>
+                            <div class="stat-label">Projects Delivered</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-number" data-count="40">40+</div>
+                            <div class="stat-label">Skilled Professionals</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
 
-                    <p class="reveal">We specialize in building houses and commercial properties, selling land and houses, supplying blocks and aggregates, renting out residential and commercial properties, and designing modern buildings and flats.</p>
-                    
-                    <div class="highlight-box reveal">
-                        <p>Our experienced team ensures every project is handled with professionalism, reliability and attention to detail — from concept and design through to construction and completion.</p>
-                    </div>
-                    
-                    <a href="contact.html" class="btn reveal" style="margin-top: 2rem;">Contact Our Team</a>
-                </div>
-                <div class="about-image reveal">
-                    <img src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=2070&q=80" alt="Team Planning">
-                </div>
-            </div>
-            
-            <!-- Company Values -->
-            <div class="section-title reveal" style="margin-top: 5rem;">
-                <h2>Our Values</h2>
-                <p class="section-subtitle">The principles that guide our service delivery</p>
-            </div>
-            
-            <div class="services-grid" style="margin-top: 2rem;">
-                <div class="service-card reveal">
-                    <div class="service-icon">
-                        <i class="fas fa-handshake"></i>
-                    </div>
-                    <div class="service-content">
-                        <h3>Integrity & Honesty</h3>
-                        <p>We believe in transparent, trustworthy business relationships and honest service delivery.</p>
-                    </div>
-                </div>
-                <div class="service-card reveal">
-                    <div class="service-icon">
-                        <i class="fas fa-medal"></i>
-                    </div>
-                    <div class="service-content">
-                        <h3>Quality Workmanship</h3>
-                        <p>We deliver strong, durable and professional construction and building solutions.</p>
-                    </div>
-                </div>
-                <div class="service-card reveal">
-                    <div class="service-icon">
-                        <i class="fas fa-users"></i>
-                    </div>
-                    <div class="service-content">
-                        <h3>Customer Commitment</h3>
-                        <p>We work closely with our clients to ensure satisfaction and long-term relationships.</p>
-                    </div>
-                </div>
-            </div>
-            
-            <!-- Company Stats -->
-            <div class="stats-grid reveal">
-                <div class="stat-card">
-                    <div class="stat-number">100+</div>
-                    <div class="stat-label">Projects Completed</div>
-                </div>
-                <div class="stat-card">
-                    <div class="stat-number">10+</div>
-                    <div class="stat-label">Years Experience</div>
-                </div>
-                <div class="stat-card">
-                    <div class="stat-number">100%</div>
-                    <div class="stat-label">Client Satisfaction</div>
-                </div>
-                <div class="stat-card">
-                    <div class="stat-number">24/7</div>
-                    <div class="stat-label">Support</div>
-                </div>
-            </div>
-            
             <!-- Mission & Vision -->
-            <div class="about-content" style="margin-top: 5rem;">
-                <div class="about-image reveal">
-                    <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&w=2070&q=80" alt="Mission Vision">
-                </div>
+            <div class="about-content fade-in" style="margin-top: 6rem;">
                 <div class="about-text">
-                    <h3 class="reveal">Our Mission & Vision</h3>
-                    <div class="highlight-box reveal">
-                        <h4 style="color: var(--gold); margin-bottom: 1rem;">Our Mission</h4>
-                        <p>To provide reliable, affordable and quality construction, real estate and building material services that improve lives and communities.</p>
-                    </div>
-                    
-                    <div class="highlight-box reveal" style="margin-top: 2rem;">
-                        <h4 style="color: var(--gold); margin-bottom: 1rem;">Our Vision</h4>
-                        <p>To become a leading construction and real estate company known for excellence, trust and innovation.</p>
-                    </div>
+                    <h2>Our Mission & Vision</h2>
+                    <p><strong>Mission:</strong> To deliver high-quality construction and engineering services that provide value, durability, and peace of mind to every client we serve.</p>
+                    <p><strong>Vision:</strong> To become one of South Sudan’s leading construction companies known for excellence, trust, and customer satisfaction.</p>
+                    <p><strong>Core Values:</strong> Quality • Integrity • Professionalism • Reliability • Customer Focus</p>
+                </div>
+                <div class="about-image">
+                    <img src="https://images.unsplash.com/photo-1560518883-ce09059eeffa?auto=format&fit=crop&w=1473&q=80" alt="Construction Site">
                 </div>
             </div>
         </div>
@@ -143,44 +99,54 @@
     <footer>
         <div class="container">
             <div class="footer-content">
-                <div>
-                    <a href="index.html" class="footer-logo">Promise<span>Building</span></a>
-                    <p>Promise Building Company Limited is your trusted partner for construction, real estate and building materials.</p>
-                    <div class="social-links">
+                <div class="footer-about">
+                    <div class="footer-logo">Gold Medal<span>Construction</span></div>
+                    <p>Delivering residential and commercial construction services across South Sudan with professionalism, precision, and trusted engineering expertise.</p>
+                    <div class="social-icons">
                         <a href="#"><i class="fab fa-facebook-f"></i></a>
-                        <a href="#"><i class="fab fa-twitter"></i></a>
                         <a href="#"><i class="fab fa-linkedin-in"></i></a>
                         <a href="#"><i class="fab fa-instagram"></i></a>
                     </div>
                 </div>
                 <div class="footer-links">
-                    <h4>Quick Links</h4>
+                    <h3 class="footer-heading">Quick Links</h3>
                     <ul>
-                        <li><a href="index.html">Home</a></li>
-                        <li><a href="about.html">About Us</a></li>
-                        <li><a href="services.html">Our Services</a></li>
-                        <li><a href="projects.html">Projects</a></li>
-                        <li><a href="contact.html">Contact</a></li>
+                        <li><a href="index.html"><i class="fas fa-chevron-right"></i> Home</a></li>
+                        <li><a href="about.html"><i class="fas fa-chevron-right"></i> About Us</a></li>
+                        <li><a href="services.html"><i class="fas fa-chevron-right"></i> Our Services</a></li>
+                        <li><a href="projects.html"><i class="fas fa-chevron-right"></i> Projects</a></li>
+                        <li><a href="contact.html"><i class="fas fa-chevron-right"></i> Contact</a></li>
                     </ul>
                 </div>
-                <div class="footer-contact">
-                    <h4>Contact Info</h4>
-                    <p><i class="fas fa-map-marker-alt"></i> (Add Your Location Here)</p>
-                    <p><i class="fas fa-phone-alt"></i> (Add Phone Number)</p>
-                    <p><i class="fas fa-envelope"></i> (Add Email Address)</p>
-                    <p><i class="fas fa-clock"></i> Mon–Fri: 8:00 AM - 6:00 PM</p>
+                <div class="footer-links">
+                    <h3 class="footer-heading">Our Services</h3>
+                    <ul>
+                        <li><a href="services.html#residential"><i class="fas fa-chevron-right"></i> Residential Construction</a></li>
+                        <li><a href="services.html#commercial"><i class="fas fa-chevron-right"></i> Commercial Buildings</a></li>
+                        <li><a href="services.html#renovation"><i class="fas fa-chevron-right"></i> Renovation & Finishing</a></li>
+                        <li><a href="services.html#planning"><i class="fas fa-chevron-right"></i> Project Management</a></li>
+                    </ul>
+                </div>
+                <div class="footer-links">
+                    <h3 class="footer-heading">Contact Info</h3>
+                    <ul>
+                        <li><a href="tel:+211923615154"><i class="fas fa-phone"></i> +211 923 615 154</a></li>
+                        <li><a href="mailto:info@goldmedalconstruction.com"><i class="fas fa-envelope"></i> info@goldmedalconstruction.com</a></li>
+                        <li><a href="#"><i class="fas fa-map-marker-alt"></i> City Mall, 2nd Floor, Room 234, Juba – South Sudan</a></li>
+                        <li><a href="https://wa.me/211923615154" target="_blank"><i class="fab fa-whatsapp"></i> WhatsApp: +211 923 615 154</a></li>
+                    </ul>
                 </div>
             </div>
-            <div class="footer-bottom">
-                <p>&copy; <span id="currentYear"></span> Promise Building Company Limited. All rights reserved.</p>
+            <div class="copyright">
+                <p>© 2025 Gold Medal Construction (GMC). All rights reserved. | Juba, South Sudan</p>
             </div>
         </div>
     </footer>
 
-    <!-- Scroll to Top Button -->
-    <button class="scroll-top">
+    <!-- Back to Top Button -->
+    <a href="#" class="back-to-top" id="backToTop">
         <i class="fas fa-chevron-up"></i>
-    </button>
+    </a>
 
     <script src="script.js"></script>
 </body>
