@@ -366,3 +366,166 @@ document.addEventListener('DOMContentLoaded', () => {
 
     console.log('All scripts loaded successfully!');
 });
+
+
+// Enhanced JavaScript for About Section
+
+// Intersection Observer for fade-in animations
+const aboutContents = document.querySelectorAll('.about-content');
+
+const fadeInObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+            fadeInObserver.unobserve(entry.target);
+        }
+    });
+}, {
+    threshold: 0.1,
+    rootMargin: '0px 0px -50px 0px'
+});
+
+aboutContents.forEach(content => {
+    fadeInObserver.observe(content);
+});
+
+// Animated counter for statistics
+const statNumbers = document.querySelectorAll('.stat-number');
+
+const animateCounter = (element) => {
+    const target = parseInt(element.getAttribute('data-count'));
+    const duration = 2000;
+    const increment = target / (duration / 16);
+    let current = 0;
+    
+    const timer = setInterval(() => {
+        current += increment;
+        if (current >= target) {
+            element.textContent = target + '+';
+            clearInterval(timer);
+        } else {
+            element.textContent = Math.floor(current) + '+';
+        }
+    }, 16);
+};
+
+const statsObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            const statNumber = entry.target;
+            if (!statNumber.classList.contains('animated')) {
+                statNumber.classList.add('animated');
+                animateCounter(statNumber);
+            }
+        }
+    });
+}, { threshold: 0.5 });
+
+statNumbers.forEach(stat => {
+    statsObserver.observe(stat);
+});
+
+// Image loading with lazy loading support
+const aboutImages = document.querySelectorAll('.about-image img');
+
+const imageObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            const img = entry.target;
+            const src = img.getAttribute('src');
+            
+            // Create a new image to preload
+            const preloadImg = new Image();
+            preloadImg.src = src;
+            
+            preloadImg.onload = () => {
+                img.classList.add('loaded');
+            };
+            
+            // Handle error
+            preloadImg.onerror = () => {
+                console.warn('Failed to load image:', src);
+                img.classList.add('loaded');
+            };
+            
+            imageObserver.unobserve(img);
+        }
+    });
+}, {
+    rootMargin: '200px 0px' // Start loading 200px before image comes into view
+});
+
+aboutImages.forEach(img => {
+    imageObserver.observe(img);
+});
+
+// Parallax effect for images on scroll
+window.addEventListener('scroll', () => {
+    aboutImages.forEach(img => {
+        const rect = img.getBoundingClientRect();
+        const scrollPercentage = rect.top / window.innerHeight;
+        
+        if (scrollPercentage < 1 && scrollPercentage > -1) {
+            const speed = 0.2;
+            const yPos = -scrollPercentage * speed * 100;
+            img.style.transform = `scale(1.05) translateY(${yPos}px)`;
+        }
+    });
+});
+
+// Hover effect for stats items
+const statItems = document.querySelectorAll('.stat-item');
+
+statItems.forEach(item => {
+    item.addEventListener('mouseenter', (e) => {
+        const number = item.querySelector('.stat-number');
+        const originalNumber = number.getAttribute('data-count');
+        
+        // Slight pulse animation on hover
+        number.style.transform = 'scale(1.1)';
+    });
+    
+    item.addEventListener('mouseleave', (e) => {
+        const number = item.querySelector('.stat-number');
+        number.style.transform = 'scale(1)';
+    });
+});
+
+// Responsive image height adjustment
+function adjustImageHeights() {
+    const aboutImages = document.querySelectorAll('.about-image');
+    const windowWidth = window.innerWidth;
+    
+    aboutImages.forEach(image => {
+        if (windowWidth <= 480) {
+            image.style.height = '250px';
+        } else if (windowWidth <= 640) {
+            image.style.height = '300px';
+        } else if (windowWidth <= 768) {
+            image.style.height = '350px';
+        } else if (windowWidth <= 1024) {
+            image.style.height = '400px';
+        } else {
+            image.style.height = '500px';
+        }
+    });
+}
+
+// Call on load and resize
+window.addEventListener('load', adjustImageHeights);
+window.addEventListener('resize', adjustImageHeights);
+
+// Add loading state for images
+aboutImages.forEach(img => {
+    if (!img.complete) {
+        img.classList.remove('loaded');
+    } else {
+        img.classList.add('loaded');
+    }
+});
+
+// Touch support for mobile
+document.addEventListener('touchstart', function() {}, {passive: true});
+
+
+
